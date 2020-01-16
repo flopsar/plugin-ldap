@@ -25,4 +25,4 @@ jobs:
         # Artifact name
         name: plugin 
         # Directory containing files to upload
-        path: ./libs/flopsar-ldap.so
+        path: .libs/flopsar-ldap.so
