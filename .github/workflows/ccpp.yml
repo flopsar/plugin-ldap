@@ -8,6 +8,8 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
+    - name: Checkout submodules
+      uses: textbook/git-checkout-submodule-action@2.0.0
     - uses: actions/checkout@v1
     - name: rebuild
       run: autoreconf -i  
