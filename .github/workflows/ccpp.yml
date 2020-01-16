@@ -11,18 +11,16 @@ jobs:
     - uses: actions/checkout@v1
     - name: Checkout submodules
       uses: textbook/git-checkout-submodule-action@2.0.0  
-    - name: rebuild
+    - name: Rebuild configuration
       run: autoreconf -i  
-    - name: dependencies
+    - name: Install dependencies
       run: sudo apt install -y libldap2-dev  
-    - name: configure
+    - name: Configure
       run: ./configure
-    - name: make
+    - name: Build
       run: make
-    - name: Upload artifact
+    - name: Deploy artifact
       uses: actions/upload-artifact@v1.0.0
       with:
-        # Artifact name
         name: plugin 
-        # Directory containing files to upload
         path: .libs/flopsar-ldap.so
