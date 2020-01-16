@@ -12,7 +12,7 @@ jobs:
     - name: rebuild
       run: autoreconf -i  
     - name: dependencies
-      run: apt install -y libldap2-dev  
+      run: sudo apt install -y libldap2-dev  
     - name: configure
       run: ./configure
     - name: make
