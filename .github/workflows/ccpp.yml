@@ -24,3 +24,10 @@ jobs:
       with:
         name: plugin 
         path: .libs/flopsar-ldap.so
+    - name: Release assets
+      uses: fnkr/github-action-ghr@v1
+      if: startsWith(github.ref, 'refs/tags/')
+      env:
+          GHR_COMPRESS: zip
+          GHR_PATH: .libs/flopsar-ldap.so
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
